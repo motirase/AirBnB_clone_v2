@@ -7,6 +7,7 @@ $nginx_conf = "server {
     add_header X-Served-By ${hostname};
     root   /var/www/html;
     index  index.html index.htm;
+<<<<<<< HEAD
     location /hbnb_static {
 	alias /data/web_static/current;
 	index index.html index.htm;
@@ -14,6 +15,18 @@ $nginx_conf = "server {
     location /redirect_me {
     	return 301 http://cuberule.com/;
     }
+=======
+
+    location /hbnb_static {
+        alias /data/web_static/current;
+        index index.html index.htm;
+    }
+
+    location /redirect_me {
+        return 301 http://cuberule.com/;
+    }
+
+>>>>>>> 8c5dbeed60929e24fc56e598218afe8c5214768b
     error_page 404 /404.html;
     location /404 {
       root /var/www/html;
@@ -43,8 +56,13 @@ file { '/data/web_static/releases/test':
 } ->
 
 file { '/data/web_static/shared':
+<<<<<<< HEAD
 ensure => 'directory'
   } ->
+=======
+  ensure => 'directory'
+} ->
+>>>>>>> 8c5dbeed60929e24fc56e598218afe8c5214768b
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
