@@ -46,4 +46,7 @@ def do_deploy(archive_path):
            format(name)).failed is True:
         return False
     return True
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a1e350e51cdda72f5fe5377025e267ab8277d2c
