@@ -1,37 +1,5 @@
 #!/usr/bin/python3
 """
-<<<<<<< HEAD
-Script that starts a Flask web application
-"""
-from flask import Flask, render_template
-from models import storage
-from models.state import State
-
-
-app = Flask(__name__)
-
-
-@app.teardown_appcontext
-def handle_teardow(self):
-    """
-    Después de cada solicitud, debe eliminar
-    la sesión actual de SQLAlchemy
-    """
-    storage.close()
-
-
-@app.route('/states_list', strict_slashes=False)
-def list_of_state():
-    """
-    Función llamada con la ruta /states_list
-    """
-    states = storage.all(State).values()
-    return render_template("7-states_list.html", states=states)
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
-=======
 starts a Flask web application
 """
 
@@ -55,4 +23,3 @@ def teardown_db(exception):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
->>>>>>> 8c5dbeed60929e24fc56e598218afe8c5214768b
